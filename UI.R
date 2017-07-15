@@ -1,6 +1,6 @@
 library(shiny)
 library(networkD3)
-libary(ggplot2)
+library(ggplot2)
 
 
 # Define UI for application that plots random distributions 
