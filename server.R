@@ -4,8 +4,8 @@ library(networkD3)
 
 
 # prepare dataset
-nodes <- read.csv("nodes.csv")
-raw_df <- read.csv("raw.csv", colClasses = c("numeric","character","character",
+nodes <- read.csv("data/nodes.csv")
+raw_df <- read.csv("data/raw.csv", colClasses = c("numeric","character","character",
                                              "numeric","numeric"))
 
 df <- raw_df

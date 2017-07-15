@@ -1,9 +1,5 @@
 library(shiny)
 
-raw_df <- read.csv("raw.csv", colClasses = c("numeric","character","character",
-                                             "numeric","numeric"))
-
-df <- raw_df
 
 # Define UI for application that plots random distributions 
 shinyUI(pageWithSidebar(
