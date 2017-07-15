@@ -47,6 +47,14 @@ shinyServer(function(input, output) {
   output$ggplot<-renderPlot({
 
     df$finalnode <- substr(df$dna, start = nchar(df$dna), stop = nchar(df$dna))
+    
+    #filter the df
+    if(input$filter1 == "All") {
+      df <- filter(df, filt2 > input$filter2)
+    }
+    else
+      df <- filter(df, filt1 == input$filter1, filt2 > input$filter2)
+    
     df_sum <- df %>% group_by(finalnode, outcome) %>%
       summarize(cost_average = mean(cost), revenue_average = mean(revenue))
 
