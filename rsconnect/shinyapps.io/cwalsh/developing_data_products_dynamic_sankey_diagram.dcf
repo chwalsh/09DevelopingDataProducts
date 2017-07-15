@@ -1,0 +1,11 @@
+name: developing_data_products_dynamic_sankey_diagram
+title: Developing Data Products: Dynamic Sankey Diagram
+account: cwalsh
+server: shinyapps.io
+appId: 197021
+bundleId: 904554
+url: https://cwalsh.shinyapps.io/developing_data_products_dynamic_sankey_diagram/
+when: 1500131639.51999
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: README.md|data/links.csv

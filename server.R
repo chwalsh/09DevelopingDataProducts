@@ -60,13 +60,19 @@ shinyServer(function(input, output) {
 
     if(input$cost_or_rev == "cost"){
 
-        ggplot(data = df, aes(factor(finalnode), cost, fill = outcome)) +
-        geom_bar(stat = "identity") + coord_flip()
+        plot <- ggplot(data = df, aes(factor(finalnode), cost, fill = outcome)) +
+          theme_minimal() + theme(legend.position="bottom")
       }
     
     else 
-        ggplot(data = df, aes(factor(finalnode), revenue, fill = outcome)) +
-        geom_bar(stat = "identity") + coord_flip()
-  })
+        plot <- ggplot(data = df, aes(factor(finalnode), revenue, fill = outcome)) +
+      theme_minimal() + theme(legend.position="bottom")
+    
+    if(input$stack == "grouped"){
+    plot + geom_bar(stat = "identity", position = position_dodge()) + coord_flip()
+    }
+    else
+      plot + geom_bar(stat = "identity") + coord_flip()
+    })
   
 })
