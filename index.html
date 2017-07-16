@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Developing Data Products</title>
+  <meta name="description" content="">
+  <meta name="author" content="Chris Walsh">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="stylesheet" href="libraries/frameworks/revealjs/css/reveal.min.css">
+  <link rel="stylesheet" href="libraries/frameworks/revealjs/css/theme/night.css" id="theme">
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" id="theme">
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->  <link rel="stylesheet" href = "assets/css/ribbons.css">
+
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section class='' data-state='' id='slide-1'>
+  
+  <style>
+.reveal p {
+    font-size: .75em;
+}
+
+.reveal small {
+    width: 500px;
+}
+
+.reveal .slides {
+    text-align: left;
+}
+
+.reveal .roll {
+    vertical-align: text-bottom;
+}
+
+code {
+    color: red;
+}
+
+.reveal pre code { 
+     height: 250px;
+}
+</style>
+
+<h2>The Assignment</h2>
+
+<p>This assignment consisted of two parts:</p>
+
+<ol>
+<li><p>An <strong>R Shiny</strong> application, complete with input, reactive output, and associated documentation</p></li>
+<li><p>A <strong>Reproducible Pitch Presentation</strong> in R Studio Presenter, complete with embedded R code</p></li>
+</ol>
+
+<p><br>
+<br></p>
+
+<h3>The Links</h3>
+
+<ol>
+<li><p>The Shiny application: <a href="https://cwalsh.shinyapps.io/developing_data_products_dynamic_sankey_diagram/">link here</a></p></li>
+<li><p>The Pitch Presentation: <a href="https://cwalsh.shinyapps.io/developing_data_products_dynamic_sankey_diagram/">link here</a></p></li>
+</ol>
+
+</section>
+<section class='' data-state='' id='slide-2'>
+  <h2>The Use Case</h2>
+  <p>This application was designed to provide insight into the flow of observations through a complex, multi-step workflow. The inital tab provides a Sankey Diagram to help <strong>visualize flow through the system</strong>. The diagram is reactive, and as cases are filtered on their underlying characteristics (e.g. priority level, expected value) the Sankey will update as well. The second tab includes a reactive bar chart that provides <strong>insight into case outcomes</strong> (e.g. cost and revenue). </p>
+
+<p>This application is a proof of concept and all underyling data was simulated.</p>
+
+</section>
+<section class='' data-state='' id='slide-3'>
+  <h2>The Sankey</h2>
+  <p><img src="figure/Sankey-1.png" title="plot of chunk Sankey" alt="plot of chunk Sankey" style="display: block; margin: auto;" /></p>
+
+<p>The <strong>Sankey Diagram</strong> allows users to visualize the flow of cases between steps in the workflow based on the reactive filters applied. In the example above we can see how cases start from a common point but eventually diverge towards <em>Mid2</em> and <em>Mid3</em>.</p>
+
+</section>
+<section class='' data-state='' id='slide-4'>
+  <h2>The Bar Chart</h2>
+  <p><img src="figure/Bar-1.png" title="plot of chunk Bar" alt="plot of chunk Bar" style="display: block; margin: auto;" /></p>
+
+<p>The <strong>Bar Chart</strong> allows users to understand the costs and revenues associated with the cases selected by the reactive filters. In the example above we can see the cases that end at <em>Node 2</em> (Mid2) resulted in the greatest cost to work. This is likely driven by their volume, which can be observed on the previous Sankey Diagram.</p>
+
+</section>
+    </div>
+  </div>
+</body>
+  <script src="libraries/frameworks/revealjs/lib/js/head.min.js"></script>
+  <script src="libraries/frameworks/revealjs/js/reveal.min.js"></script>
+  <script>
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+    theme: Reveal.getQueryHash().theme || 'night', 
+    transition: Reveal.getQueryHash().transition || 'convex', 
+    dependencies: [
+    // Cross-browser shim that fully implements classList -
+    // https://github.com/eligrey/classList.js/
+      { src: 'libraries/frameworks/revealjs/lib/js/classList.js', condition: function() { return !document.body.classList;}},
+      // Zoom in and out with Alt+click
+      { src: 'libraries/frameworks/revealjs/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      // Speaker notes
+      { src: 'libraries/frameworks/revealjs/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+      // Remote control your reveal.js presentation using a touch device
+      //{ src: 'libraries/frameworks/revealjs/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+      ]
+  });
+  </script>  <!-- LOAD HIGHLIGHTER JS FILES -->
+<script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!-- DONE LOADING HIGHLIGHTER JS FILES -->
+ 
+
+</html>
